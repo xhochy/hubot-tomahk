@@ -1,5 +1,5 @@
 # Description:
-#   Allows Hubot to do resolve Music URLs to unified toma.hk links
+#   Allows Hubot to resolve Music URLs to unified toma.hk links
 #
 # Commands:
 #   hubot np <url> - Translate the music URL to a toma.hk link and displays metadata
