@@ -1,0 +1,25 @@
+{
+    "name": "hubot-tomahk",
+    "description": "Hubot Plugin to translate various music URLs into unified toma.hk links so that you are not restricted to the services of your peers",
+    "author": "Uwe L. Korn <uwelk@xhochy.com>",
+    "version": "0.1.0",
+    "dependencies": {
+        "glob": "3.x.x",
+        "async": "0.2.x",
+        "tomahawkjs": ">=0.2.x",
+        "tomahk": "0.x.x"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/xhochy/hubot-tomahk.git"
+    },
+    "license": "MIT",
+    "keywords": [
+        "tomahawk",
+        "tomahk",
+        "hubot",
+        "music",
+        "url"
+    ],
+    "engine": "node >= 0.10.0"
+}
