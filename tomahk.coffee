@@ -6,14 +6,19 @@
 #
 # Configuration:
 #   HUBOT_AXE_DIRECTORY - Directory with .axe files (Tomahawk Resolvers)
+#   HUBOT_TOMAHK_ANY - Respond to all regonized music URLs (turn off with "false")
 queuedURLs = {}
 module.exports = (robot) ->
-  robot.hear /(np|nowplaying):? (.*)/i, (msg) ->
-      url = msg.match[2]
-      console.log(url)
-      if canParseUrl(msg.match[2])
-          queuedURLs[url] = msg
-          lookupUrl(url)
+    robot.hear /(np|nowplaying):? (.*)/i, (msg) ->
+        url = msg.match[2]
+        if canParseUrl(msg.match[2])
+            queuedURLs[url] = msg
+            lookupUrl(url)
+    if process.env.HUBOT_TOMAHK_ANY != "false"
+        robot.hear /(.*)/i, (msg) ->
+            urls = msg.match[0].split(/\s+/).filter(canParseUrl).map (url) ->
+                queuedURLs[url] = msg
+                lookupUrl(url)
 
 async = require 'async'
 glob = require 'glob'
